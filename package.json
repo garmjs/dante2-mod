@@ -74,6 +74,8 @@
     "draft-js-export-html": "^1.2.0",
     "draft-js-multidecorators": "^1.0.0",
     "draft-js-prism": "^1.0.6",
+    "is-buffer": "^2.0.4",
+    "output-file-sync": "^2.0.1",
     "polished": "^3.4.0",
     "prismjs": "^1.15.0",
     "react": "^16.8.0",

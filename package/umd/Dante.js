@@ -2696,7 +2696,7 @@
           placeholder: input.options.placeholder,
           endpoint: input.options.endpoint
         };
-        return _this.props.onChange(resetBlockWithType(_this.props.editorState, 'placeholder', opts));
+        return _this.props.onChange(resetBlockWithType(_this.props.editorState, "placeholder", opts));
       });
 
       _defineProperty(_assertThisInitialized(_this), "insertImage", function (file) {
@@ -2707,7 +2707,8 @@
         }; // cleans input image value
 
         _this.refs.fileInput.value = "";
-        return _this.props.onChange(addNewBlock(_this.props.editorState, 'image', opts));
+        console.log("insertImage: ");
+        return _this.props.onChange(addNewBlock(_this.props.editorState, "image", opts));
       });
 
       _defineProperty(_assertThisInitialized(_this), "handleFileInput", function (e) {
@@ -2870,9 +2871,9 @@
           });
         }), React.createElement("input", {
           type: "file",
-          accept: "image/*",
+          accept: "image/*,video/*",
           style: {
-            display: 'none'
+            display: "none"
           },
           ref: "fileInput",
           multiple: "multiple",
@@ -2922,10 +2923,10 @@
             return e.preventDefault();
           },
           style: {
-            fontSize: '21px'
+            fontSize: "21px"
           }
         }, React.createElement("span", {
-          className: 'tooltip-icon'
+          className: "tooltip-icon"
         }, this.props.item.icon()));
       }
     }]);
@@ -2936,7 +2937,7 @@
   var DanteInlineTooltipConfig = function DanteInlineTooltipConfig() {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     var config = {
-      ref: 'add_tooltip',
+      ref: "add_tooltip",
       component: DanteInlineTooltip
     };
     return Object.assign(config, options);
