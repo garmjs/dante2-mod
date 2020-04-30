@@ -150,6 +150,8 @@ export default class DanteInlineTooltip extends React.Component {
   insertImage = (file) => {
     if (!file) return;
 
+    const type = file.type.split("/")[0];
+
     let opts = {
       url: URL.createObjectURL(file),
       file,
@@ -160,9 +162,13 @@ export default class DanteInlineTooltip extends React.Component {
     console.log(file);
     console.log(opts);
 
-    return this.props.onChange(
-      addNewBlock(this.props.editorState, "image", opts)
-    );
+    if (type === "image") {
+      this.props.onChange(addNewBlock(this.props.editorState, "image", opts));
+    }
+
+    if (type === "video") {
+      this.props.onChange(addNewBlock(this.props.editorState, "video", opts));
+    }
   };
 
   handleFileInput = (e) => {
