@@ -157,7 +157,8 @@ export default class DanteInlineTooltip extends React.Component {
     // cleans input image value
     this.refs.fileInput.value = "";
 
-    console.log(("insertImage: ": opts));
+    console.log(file);
+    console.log(opts);
 
     return this.props.onChange(
       addNewBlock(this.props.editorState, "image", opts)
