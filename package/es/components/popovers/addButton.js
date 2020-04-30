@@ -142,6 +142,7 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "insertImage", function (file) {
       if (!file) return;
+      var type = file.type.split("/")[0];
       var opts = {
         url: URL.createObjectURL(file),
         file: file
@@ -150,7 +151,14 @@ function (_React$Component) {
       _this.refs.fileInput.value = "";
       console.log(file);
       console.log(opts);
-      return _this.props.onChange(addNewBlock(_this.props.editorState, "image", opts));
+
+      if (type === "image") {
+        _this.props.onChange(addNewBlock(_this.props.editorState, "image", opts));
+      }
+
+      if (type === "video") {
+        _this.props.onChange(addNewBlock(_this.props.editorState, "video", opts));
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleFileInput", function (e) {
