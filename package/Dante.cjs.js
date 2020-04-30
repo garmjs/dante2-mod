@@ -2712,7 +2712,8 @@ function (_React$Component) {
       }; // cleans input image value
 
       _this.refs.fileInput.value = "";
-      console.log("insertImage: ");
+      console.log(file);
+      console.log(opts);
       return _this.props.onChange(addNewBlock(_this.props.editorState, "image", opts));
     });
 
