@@ -140,7 +140,7 @@ function (_React$Component) {
       return _this.props.onChange(resetBlockWithType(_this.props.editorState, "placeholder", opts));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "insertImage", function (file) {
+    _defineProperty(_assertThisInitialized(_this), "insertMedia", function (file) {
       if (!file) return;
       var type = file.type.split("/")[0];
       var opts = {
@@ -149,8 +149,6 @@ function (_React$Component) {
       }; // cleans input image value
 
       _this.refs.fileInput.value = "";
-      console.log(file);
-      console.log(opts);
 
       if (type === "image") {
         _this.props.onChange(addNewBlock(_this.props.editorState, "image", opts));
@@ -166,10 +164,10 @@ function (_React$Component) {
 
       /*
       Object.keys(fileList).forEach (o)=>
-        @.insertImage(fileList[0])
+        @.insertMedia(fileList[0])
       */
 
-      return _this.insertImage(fileList[0]);
+      return _this.insertMedia(fileList[0]);
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleInsertion", function (e) {
@@ -325,8 +323,8 @@ function (_React$Component) {
         style: {
           display: "none"
         },
-        ref: "fileInput",
-        multiple: "multiple",
+        ref: "fileInput" // multiple="multiple"
+        ,
         onChange: this.handleFileInput
       })));
     }
