@@ -54,7 +54,7 @@
     "emotion-theming": "^10.0.14",
     "fs-promise": "^2.0.3",
     "gh-pages": "^1.2.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "polished": "^3.4.0",
     "react-powerplug": "^1.0.0-rc.1",
     "rollup": "^0.64.1",
